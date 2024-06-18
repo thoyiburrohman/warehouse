@@ -1,6 +1,8 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/u1671393/public_html/thoyiburrohman.my.id
-    - /bin/cp index.html $DEPLOYPATH
-    - /bin/cp style.css $DEPLOYPATH
+    - export DEPLOYPATH=/home/u1671393/public_html/thoyiburrohman.my.id/warehouse
+    - /bin/cp -r app $DEPLOYPATH
+    - /bin/cp -r public $DEPLOYPATH
+    - /bin/cp -r resources $DEPLOYPATH
+    - /bin/cp -r routes $DEPLOYPATH
