@@ -66,7 +66,9 @@ class DistributionNteController extends Controller
      */
     public function store(Request $request, Api $bot)
     {
-
+        $request->validate([
+            'sn_id' => 'required',
+        ]);
         Nte::whereIn('id', $request->sn_id)
             ->update([
                 'status' => 'intech',

@@ -31,7 +31,7 @@ class ResumeNteEbisExport implements WithMultipleSheets, ShouldAutoSize
                 public function view(): View
                 {
                     return view('exports.barcode-nte-ebis', [
-                        'nte' => Nte::where('owner', 'EBIS')->orderBy('name', 'asc')->get(),
+                        'nte' => Nte::where('warehouse_id', warehouseId())->where('status', 'available')->where('owner', 'EBIS')->orderBy('name', 'asc')->get(),
                     ]);
                 }
             },

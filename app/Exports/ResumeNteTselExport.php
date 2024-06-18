@@ -31,7 +31,7 @@ class ResumeNteTselExport implements WithMultipleSheets, ShouldAutoSize
                 public function view(): View
                 {
                     return view('exports.barcode-nte-tsel', [
-                        'nte' => Nte::where('owner', 'TSEL')->orderBy('name', 'asc')->get(),
+                        'nte' => Nte::where('warehouse_id', warehouseId())->where('status', 'available')->where('owner', 'TSEL')->orderBy('name', 'asc')->get(),
                     ]);
                 }
             },
