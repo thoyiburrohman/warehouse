@@ -30,7 +30,7 @@
                     </div>
                     <div class="row">
                         <div class="col-xxl-2 col-lg-2 col-md-6">
-                            <div class="card stretch stretch-full border-dashed ">
+                            <div class="card stretch stretch-full border-dashed border-gray-5">
                                 <div class="card-body rounded-3 text-center">
                                     <div class="fs-4 fw-bolder text-dark mt-3 mb-1">{{ totalNte('ONT') }}</div>
                                     <p class="fs-12 fw-medium text-muted text-spacing-1 mb-0 text-truncate-1-line">
@@ -39,7 +39,7 @@
                             </div>
                         </div>
                         <div class="col-xxl-2 col-lg-2 col-md-6">
-                            <div class="card stretch stretch-full border-dashed ">
+                            <div class="card stretch stretch-full border-dashed border-gray-5">
                                 <div class="card-body rounded-3 text-center">
                                     <div class="fs-4 fw-bolder text-dark mt-3 mb-1">{{ totalNte('STB') }}</div>
                                     <p class="fs-12 fw-medium text-muted text-spacing-1 mb-0 text-truncate-1-line">
