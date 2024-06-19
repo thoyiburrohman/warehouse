@@ -210,7 +210,7 @@
                                 <table class="table table-hover" id="datatableIntech">
                                     <thead>
                                         <tr>
-                                            @if (roleId() == 1)
+                                            @if (roleId() != 3)
                                                 <th>Warehouse</th>
                                             @endif
                                             <th>Serial Number</th>
@@ -224,8 +224,8 @@
                                     <tbody>
                                         @foreach ($nteIntech as $item)
                                             <tr class="single-item">
-                                                @if (roleId() == 1)
-                                                    <td class="text-uppercase">{{ $item->warehouse->name }}</td>
+                                                @if (roleId() != 3)
+                                                    <td class="text-uppercase">{{ $item->fromWarehouse->name }}</td>
                                                 @endif
                                                 <td class="text-uppercase">{{ $item->nte->serial_number }}</td>
                                                 <td class="text-uppercase">

@@ -34,10 +34,16 @@ use Telegram\Bot\Laravel\Facades\Telegram;
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/', function () {
+        if (roleId() != 3) {
+            $intech = TransactionNte::where('type', 'distribution')->whereRelation('nte', 'status', 'intech')->orderBy('date', 'asc')->get();
+        } else {
+            $intech = TransactionNte::where('type', 'distribution')->whereRelation('nte', 'warehouse_id', warehouseId())
+                ->whereRelation('nte', 'status', 'intech')->orderBy('date', 'asc')->get();
+        }
         $data = [
             'assetNte' => AssetNte::orderBy('type', 'asc')->get(),
             'warehouse' => Warehouse::all(),
-            'nteIntech' => TransactionNte::where('type', 'distribution')->whereRelation('nte', 'status', 'intech')->orderBy('date', 'asc')->get(),
+            'nteIntech' => $intech,
         ];
         return view('pages.index', $data);
     })->name('index');

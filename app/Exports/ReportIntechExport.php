@@ -16,9 +16,14 @@ class ReportIntechExport implements FromView, ShouldAutoSize
      */
     public function view(): View
     {
-
+        if (roleId() != 3) {
+            $intech = TransactionNte::where('type', 'distribution')->whereRelation('nte', 'status', 'intech')->orderBy('date', 'asc')->get();
+        } else {
+            $intech = TransactionNte::where('type', 'distribution')->whereRelation('nte', 'warehouse_id', warehouseId())
+                ->whereRelation('nte', 'status', 'intech')->orderBy('date', 'asc')->get();
+        }
         return view('exports.report-intech', [
-            'distributions' => TransactionNte::where('type', 'distribution')->whereRelation('nte', 'status', 'intech')->get(),
+            'distributions' => $intech,
         ]);
     }
 }
