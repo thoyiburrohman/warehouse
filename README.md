@@ -26,3 +26,30 @@ Warehouse Management System ini adalah aplikasi berbasis web yang dibuat menggun
    ```bash
    git clone https://github.com/thoyiburrohman/warehouse.git
    cd warehouse
+
+2. Install dependensi PHP:
+   ```bash
+   composer install
+
+3. Copy file .env dan generate key:
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+
+4. Sesuaikan konfigurasi database di .env lalu jalankan migrasi:
+   ```bash
+   php artisan migrate
+
+5. Jalankan seeder jika tersedia:
+   ```bash
+   php artisan db:seed
+
+6. Jalankan server lokal:
+   ```bash
+   php artisan serve
+
+## 📌 Catatan
+Proyek ini masih dalam tahap pengembangan. Beberapa fitur mungkin masih dalam proses penyempurnaan.
+
+## 📃 Lisensi
+Proyek ini adalah proyek pribadi dan tidak diizinkan untuk digunakan, disalin, atau dimodifikasi tanpa izin tertulis dari pemilik repository.
